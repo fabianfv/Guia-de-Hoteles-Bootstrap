@@ -53,7 +53,6 @@
 
     <div class="container">
       <!-- Carousel de destinos -->
-
       <div
         id="carouselId"
         class="carousel slide mt-5"
@@ -124,6 +123,267 @@
           <li data-target="#carouselId" data-slide-to="11"></li>
         </ol>
       </div>
+
+      <!-- Productos -->
+      <div class="col-12 mt-5" id="conPopover">
+        <div class="row">
+          <div class="col-12 col-md-6 d-flex flex-fill">
+            <div class="card mt-2 mr-md-2">
+              <figure
+                class="h-100"
+                data-toggle="popover"
+                data-trigger="hover"
+                data-placement="left"
+                title="Promoción: Luna de Miel"
+                data-content="Todo lo que soñaste para este momento único y mucho, mucho más: restaurantes, excursiones, pubs, música en vivo, discotecas, recitales, cine, teatro y en cada ocasión una sorpresa exclusiva!!!"
+              >
+                <img class="card-img-top" src="images/luna-de-miel.svg" alt="vacaciones luna de miel" />
+
+                <figcaption class="card-body">
+                  <h3 class="card-title">Luna de Miel</h3>
+                  <p class="card-text">¡Estás a un clic de tu momento mágico!</p>
+                </figcaption>
+              </figure>
+
+              <button
+                id="lunaDeMiel"
+                class="btn btn-success btn-reserva"
+                type="button"
+                data-toggle="modal"
+                data-target="#modalReserva"
+              >
+                Reservar
+              </button>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-6 d-flex flex-fill">
+            <div class="card mt-2 mr-md-2">
+              <figure
+                class="h-100"
+                data-toggle="popover"
+                data-trigger="hover"
+                data-placement="right"
+                title="Promoción: Aniversario"
+                data-content="Te brindamos los ambientes ideales para celebrar a lo grande: excursiones, paseos y restaurantes especialmente seleccionados."
+              >
+                <img class="card-img-top" src="images/aniversario.svg" alt="vacaciones aniversario" />
+
+                <figcaption class="card-body">
+                  <h3 class="card-title">Aniversario</h3>
+                  <p class="card-text">¡Vive una experiencia memorable!</p>
+                </figcaption>
+              </figure>
+
+              <button
+                id="aniversario"
+                class="btn btn-success btn-reserva"
+                type="button"
+                data-toggle="modal"
+                data-target="#modalReserva"
+              >
+                Reservar
+              </button>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 d-flex flex-fill">
+            <div class="card mt-2 mr-md-2">
+              <figure
+                class="h-100"
+                data-toggle="popover"
+                data-trigger="hover"
+                data-placement="left"
+                title="Promoción: Vaciones familiares"
+                data-content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, sapiente facilis."
+              >
+                <img class="card-img-top" src="images/vacaciones-familiares.svg" alt="vacaciones familiares" />
+
+                <figcaption class="card-body">
+                  <h3 class="card-title">Vacaciones Familiares</h3>
+                  <p class="card-text">¡Diversión a toda hora y para todas las edades!</p>
+                </figcaption>
+              </figure>
+
+              <button
+                id="vacaciones-familiares"
+                class="btn btn-success btn-reserva"
+                type="button"
+                data-toggle="modal"
+                data-target="#modalReserva"
+              >
+                Reservar
+              </button>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 d-flex flex-fill">
+            <div class="card mt-2 mr-md-2">
+              <figure
+                class="h-100"
+                data-toggle="popover"
+                data-trigger="hover"
+                data-placement="right"
+                title="Promoción: Escapada de fin de semana"
+                data-content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, sapiente facilis."
+              >
+                <img class="card-img-top" src="images/escapada-fin-de-semana.svg" alt="escapada de fin de semana" />
+
+                <figcaption class="card-body">
+                  <h3 class="card-title">Escapada de fin de semana</h3>
+                  <p class="card-text">¡Relájate, desconecta, vive, experimenta, renuévate!</p>
+                </figcaption>
+              </figure>
+
+              <button
+                id="escapada-fin-de-semana"
+                class="btn btn-success btn-reserva"
+                type="button"
+                data-toggle="modal"
+                data-target="#modalReserva"
+              >
+                Reservar
+              </button>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-6 d-flex flex-fill">
+            <div class="card mt-2 mr-md-2">
+              <figure
+                class="h-100"
+                data-toggle="popover"
+                data-trigger="hover"
+                data-placement="left"
+                title="Promoción: Paraíso"
+                data-content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, sapiente facilis."
+              >
+                <img class="card-img-top" src="images/paraiso.svg" alt="escapada de fin de semana" />
+
+                <figcaption class="card-body">
+                  <h3 class="card-title">Paraíso</h3>
+                  <p class="card-text">Elige el destino más increíble del mundo para ti y ¡distruta!</p>
+                </figcaption>
+              </figure>
+
+              <button
+                id="paraiso"
+                class="btn btn-success btn-reserva"
+                type="button"
+                data-toggle="modal"
+                data-target="#modalReserva"
+              >
+                Reservar
+              </button>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-6 d-flex flex-fill">
+            <div class="card mt-2 mr-md-2">
+              <figure
+                class="h-100"
+                data-toggle="popover"
+                data-trigger="hover"
+                data-placement="right"
+                title="Promoción: Todo incluido"
+                data-content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, sapiente facilis."
+              >
+                <img class="card-img-top" src="images/todo-incluido.svg" alt="todo incluido" />
+
+                <figcaption class="card-body">
+                  <h3 class="card-title">Todo Incluido</h3>
+                  <p class="card-text">¡Suelta ya! Olvídate de todo y disfruta.</p>
+                  <p>Eso sí, ¡no olvides tu bañador y ropa de salir!</p>
+                </figcaption>
+              </figure>
+
+              <button
+                id="todo-incluido"
+                class="btn btn-success btn-reserva"
+                type="button"
+                data-toggle="modal"
+                data-target="#modalReserva"
+              >
+                Reservar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal reserva productos-->
+    <div
+      class="modal fade"
+      id="modalReserva"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="modalReservaLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-reserva" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalReservaLabel">Haz tu reserva ahora mismo</h5>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body mr-3 ml-3">
+            <form>
+              <div class="form-row">
+                <div class="form-group col">
+                  <label for="nombre">Nombre</label>
+                  <input type="text" id="nombre" placeholder="Ingresa tu nombre" class="form-control" />
+                </div>
+                <div class="form-group col">
+                  <label for="apellido">Apellido</label>
+                  <input type="text" id="apellido" placeholder="Ingresa tu apellido" class="form-control" />
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group col">
+                  <label for="email">Email</label>
+                  <input type="email" id="email" placeholder="Ingresa tu email" class="form-control" />
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group col">
+                  <label for="domicilio">Domicilio</label>
+                  <input type="text" id="domicilio" placeholder="Ingresa tu domicilio" class="form-control" />
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="from-group col">
+                  <label for="tipo-habitacion">Tipo de habitación</label>
+                  <select id="tipo-habitacion" class="form-control">
+                    <option selected>Simple</option>
+                    <option>Doble</option>
+                    <option>Suite</option>
+                    <option>Suite de lujo</option>
+                    <option>Ejecutiva</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-row mt-3">
+                <div class="form-group col">
+                  <label>Opciones</label>
+                  <div class="form-check ml-1">
+                    <input type="checkbox" id="servicio-habitacion" class="form-check-input" />
+                    <label for="servicio-habitacion" class="ml-1">Con servicio en habitación</label>
+                  </div>
+                  <div class="form-check ml-1">
+                    <input type="checkbox" id="mini-bar" class="form-check-input" />
+                    <label for="mini-bar" class="ml-1">Con mini bar</label>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
+            <input type="submit" value="Confirmar reserva" class="btn btn-success" />
+          </div>
+        </div>
+      </div>
     </div>
 
     <!-- footer -->
@@ -153,7 +413,7 @@
           </a>
         </div>
 
-        <div class="col-md-4 d-flex flex-column align-items-center card-office">
+        <div class="col-md-4 d-flex flex-column align-items-center text-center card-office">
           <h3>Oficina central</h3>
           <address class="data">
             <p>9 a 18 de Lunes a Viernes</p>

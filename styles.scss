@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@500&display=swap");
 
+body {
+ background: hsl(210, 10%, 13%);
+}
+
 .jumbotron {
   background-image: url("../images/banner.jpg");
   background-repeat: no-repeat;
@@ -13,11 +17,12 @@
   height: 50vh;
   margin-top: 50px;
 
+
   .header {
     padding: 1rem 2rem;
     flex: 1 1 0;
     height: 100%;
-  
+
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -33,4 +38,8 @@
   }
 }
 
-
+.card,
+.list-group-item,
+.modal-content {
+  background-color: #fff0da;
+}
