@@ -2,8 +2,8 @@
 /**************
 * Site styles *
 ***************/
-body {
-  background: #1e2124;
+.body-bg-color {
+  background-color: #1e2124;
 }
 
 .jumbotron {
@@ -47,7 +47,6 @@ body {
 }
 
 .card,
-.list-group-item,
 .modal-content {
   background-color: #fff0da;
 }
@@ -71,5 +70,10 @@ body {
 .card-hotel i.fa {
   color: #007bff;
   margin: 1rem 0;
+}
+
+#mainContent {
+  margin-top: 10em;
+  margin-bottom: 5em;
 }
 /*# sourceMappingURL=styles.css.map */

@@ -3,8 +3,9 @@
 /**************
 * Site styles *
 ***************/
-body {
-  background: hsl(210, 10%, 13%);
+
+.body-bg-color {
+  background-color: hsl(210, 10%, 13%);
 }
 
 .jumbotron {
@@ -53,7 +54,7 @@ body {
 }
 
 .card,
-.list-group-item,
+//.list-group-item,
 .modal-content {
   background-color: #fff0da;
 }
@@ -77,4 +78,9 @@ body {
     color: #007bff;
     margin: 1rem 0;
   }
+}
+
+#mainContent {
+  margin-top: 10em;
+  margin-bottom: 5em;
 }
