@@ -1,0 +1,58 @@
+.text-primary {
+  color: hsl(281, 100%, 40%);
+}
+.text-secondary {
+  color: hsl(106, 44%, 48%);
+}
+.text-success {
+  color: hsl(207, 97%, 46%);
+}
+.text-danger {
+  color: rgb(240, 62, 8);
+}
+.text-warning {
+  color: hsl(56, 85%, 40%);
+}
+.text-info {
+  color: hsl(209, 78%, 31%);
+}
+.text-light {
+  color: hsl(46, 82%, 73%);
+}
+.text-dark {
+  color: hsl(210, 10%, 23%);
+}
+.text-muted {
+  color: hsl(208, 7%, 36%);
+}
+.text-white {
+  color: hsl(0, 0%, 90%);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.my-5 {
+  margin-top: 5ch;
+  margin-bottom: 5ch;
+}
+
+.container {
+  margin-left: 5em;
+  margin-right: 5em;
+}
+
+body {
+  background-color:beige;
+  font-family: sans-serif;
+}
+
+h2 {
+  font-weight: 700;
+  font-size: 1.5em;
+}
+
+.bg-dark {
+  background-color: hsl(0, 0%, 30%);
+}

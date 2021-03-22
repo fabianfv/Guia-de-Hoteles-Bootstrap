@@ -1,0 +1,24 @@
+{
+  "name": "Guia-de-Hoteles-Bootstrap",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fabianfv/Guia-de-Hoteles-Bootstrap.git"
+  },
+  "keywords": [],
+  "author": "Fabián Flores Vadell",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fabianfv/Guia-de-Hoteles-Bootstrap/issues"
+  },
+  "homepage": "https://github.com/fabianfv/Guia-de-Hoteles-Bootstrap#readme",
+  "dependencies": {
+    "bootstrap": "^4.6.0",
+    "jquery": "^3.6.0"
+  }
+}
