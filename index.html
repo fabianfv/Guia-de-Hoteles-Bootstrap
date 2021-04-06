@@ -25,7 +25,6 @@
   </head>
   <body class="body-bg-color">
     <!-- modal sign in -->
-
     <div
       class="modal fade"
       id="modalSignIn"
@@ -86,7 +85,7 @@
                   La contraseña debe tener una longitud mínima de 8 caracteres y máxima de 16.
                 </div>
                 <div class="invalid-feedback">
-                  La constraseña debe contener minúsculas, mayúsculas, números y símbolos.
+                  La constraseña debe contener minúsculas, mayúsculas, números y símbolos (#$%/()=¿?*+-).
                 </div>
               </div>
             </div>
@@ -127,6 +126,7 @@
                   class="form-control is-invalid"
                   required
                   pattern="^\w{2,20}$"
+                  autofocus
                 />
                 <div class="invalid-feedback">Este campo no puede estar vacío.</div>
                 <div class="invalid-feedback">
@@ -529,7 +529,8 @@
                     placeholder="Ingresa tu nombre"
                     class="form-control "
                     required
-                    pattern="^[a-zA-ZÀ-ÿ\s]+{2,20}$"
+                    pattern="^[a-zA-ZÀ-ÿ\s]{2,20}$"
+                    autofocus
                   />
                   <div class="invalid-feedback">Este campo no puede estar vacío.</div>
                   <div class="invalid-feedback">
@@ -547,7 +548,7 @@
                     placeholder="Ingresa tu apellido"
                     class="form-control "
                     required
-                    pattern="^[a-zA-ZÀ-ÿ]+{2,20}$"
+                    pattern="^[a-zA-ZÀ-ÿ]{2,20}$"
                   />
                   <div class="invalid-feedback">Este campo no puede estar vacío.</div>
                   <div class="invalid-feedback">

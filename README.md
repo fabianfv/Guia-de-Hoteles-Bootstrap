@@ -4,9 +4,14 @@
 * [Setup](#setup)
 
 ## General info
-This project is a fictional hotel guide styled using Bootstrap 4.6.
+This practice is a fictional hotel guide styled using Bootstrap 4.6.
 
 [Click here to see this page online](https://fabianfv.github.io/Guia-de-Hoteles-Bootstrap/)
+
+Lastest added features:
+
+* Forms validation using HTML5, Jquery and Bootstrap validation features.
+* A handwritten test suite for the regular expression used to validate strong passwords.
 
 Bootstrap features in use:
 * Container
@@ -50,4 +55,9 @@ You can restore the development environment by doing:
 ```
 $ cd ./Guia-de-Hoteles-Bootstrap/
 $ npm install
+```
+
+You can execute the handwritten test suite for the "password" regex by doing:
+```
+$ npm run tests
 ```

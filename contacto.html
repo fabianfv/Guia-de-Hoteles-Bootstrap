@@ -34,37 +34,69 @@
       aria-labelledby="modalSignInLabel"
       aria-hidden="true"
     >
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="modalSignInLabel">Inicio de Sesión</h5>
-            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body mr-3 ml-3">
-            <form id="signIn" action="" method="post" class="needs-validation" novalidate>
+      <form
+        id="formSignIn"
+        method="post"
+        action="successful.html"
+        name="formSignIn"
+        class="needs-validation"
+        novalidate
+      >
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="modalSignInLabel">Inicio de Sesión</h5>
+              <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+
+            <div class="modal-body mr-3 ml-3">
               <div class="form-group">
-                <label for="nombre-usuario">Nombre de Usuario</label>
+                <label for="signInNombreUsuario">Nombre de Usuario</label>
                 <input
+                  id="signInNombreUsuario"
                   type="text"
-                  id="nombre-usuario"
                   placeholder="Ingresa tu nombre de Usuario"
-                  class="form-control"
+                  class="form-control is-invalid"
+                  required
+                  pattern="^\w{2,20}$"
                 />
+                <div class="invalid-feedback">Este campo no puede estar vacío.</div>
+                <div class="invalid-feedback">
+                  Solo son válidas las letras de la A a la Z (mayúsculas y minúsculas) y el guión bajo.
+                </div>
+                <div class="invalid-feedback">
+                  El nombre de usuario debe tener una longitud mínima de 2 caracteres y máxima de 20.
+                </div>
               </div>
+
               <div class="form-group">
-                <label for="contraseña">Contraseña</label>
-                <input type="text" id="contraseña" placeholder="Ingresa tu contraseña" class="form-control" />
+                <label for="signInContrasenia">Contraseña</label>
+                <input
+                  id="signInContrasenia"
+                  type="password"
+                  placeholder="Ingresa tu contraseña"
+                  class="form-control is-invalid"
+                  pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[#$%/()=¿?*+-])(?=(?:([\w\d])\1?(?!\1\1))).{8,16}$"
+                  required
+                />
+                <div class="invalid-feedback">Este campo no puede estar vacío.</div>
+                <div class="invalid-feedback">
+                  La contraseña debe tener una longitud mínima de 8 caracteres y máxima de 16.
+                </div>
+                <div class="invalid-feedback">
+                  La constraseña debe contener minúsculas, mayúsculas, números y símbolos (#$%/()=¿?*+-).
+                </div>
               </div>
-            </form>
-          </div>
-          <div class="modal-footer">
-            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
-            <input type="submit" value="Aceptar" class="btn btn-success" />
+            </div>
+            <div class="modal-footer">
+              <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
+              <input type="submit" value="Aceptar" class="btn btn-success" />
+            </div>
           </div>
         </div>
-      </div>
+      </form>
     </div>
 
     <!-- modal sign up -->
@@ -76,46 +108,82 @@
       aria-labelledby="modalSignUpLabel"
       aria-hidden="true"
     >
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="modalSignUpLabel">Nueva cuenta de usuario</h5>
-            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body mr-3 ml-3">
-            <form id="signUp" action="" method="post" class="needs-validation" novalidate>
+      <form id="formSignUp" method="post" action="successful.html" class="needs-validation" novalidate>
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="modalSignUpLabel">Nueva cuenta de usuario</h5>
+              <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body mr-3 ml-3">
               <div class="form-group">
-                <label for="nombre-usuario">Nombre de Usuario</label>
+                <label for="signUpNombreUsuario">Nombre de Usuario</label>
                 <input
                   type="text"
-                  id="nombre-usuario"
+                  id="signUpNombreUsuario"
                   placeholder="Ingresa tu nombre de Usuario"
-                  class="form-control"
+                  class="form-control is-invalid"
+                  required
+                  pattern="^\w{2,20}$"
+                  autofocus
                 />
+                <div class="invalid-feedback">Este campo no puede estar vacío.</div>
+                <div class="invalid-feedback">
+                  Solo son válidas las letras de la A a la Z (mayúsculas y minúsculas) y el guión bajo.
+                </div>
+                <div class="invalid-feedback">
+                  El nombre de usuario debe tener una longitud mínima de 2 caracteres y máxima de 20.
+                </div>
               </div>
               <div class="form-group">
                 <label for="email">Dirección de correo electrónico</label>
                 <input
-                  type="text"
-                  id="email"
+                  type="email"
+                  id="signUpEmail"
                   placeholder="Ingresa tu dirección de correo electrónico"
-                  class="form-control"
+                  class="inputEmail form-control is-invalid"
+                  required
+                  pattern="[\w.\-\.À-ÿ]+@[\w\-À-ÿ]+\.[a-zA-Z]{2,3}"
                 />
+                <div class="invalid-feedback">Este campo no puede estar vacío.</div>
+                <div class="invalid-feedback">El caracter @ debe estar presente.</div>
+                <div class="invalid-feedback">
+                  Solo son válidas las letras, letras con tilde, números, puntos y guión medio.
+                </div>
+                <div class="invalid-feedback">
+                  El email deber estar compuesto de un nombre de usuario y un dominio, por ejempo:
+                  mi.nombre.de.usuario@mail.com
+                </div>
               </div>
+
               <div class="form-group">
-                <label for="contraseña">Contraseña</label>
-                <input type="text" id="contraseña" placeholder="Ingresa tu contraseña" class="form-control" />
+                <label for="signUpContrasenia">Contraseña</label>
+                <input
+                  type="password"
+                  id="signUpContrasenia"
+                  placeholder="Ingresa tu contraseña"
+                  class="form-control is-invalid"
+                  required
+                  pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[#$%\/\(\)=¿?*+-])(?=(?:([\w\d])\1?(?!\1\1))).{8,16}$"
+                />
+                <div class="invalid-feedback">Este campo no puede estar vacío.</div>
+                <div class="invalid-feedback">
+                  La contraseña debe tener una longitud mínima de 8 caracteres y máxima de 16.
+                </div>
+                <div class="invalid-feedback">
+                  La constraseña debe contener minúsculas, mayúsculas, números y símbolos (#$%/()=¿?*+-).
+                </div>
               </div>
-            </form>
-          </div>
-          <div class="modal-footer">
-            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
-            <input type="submit" value="Aceptar" class="btn btn-success" />
+            </div>
+            <div class="modal-footer">
+              <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
+              <input id="formSignInSubmit" type="submit" value="Aceptar" class="btn btn-success" />
+            </div>
           </div>
         </div>
-      </div>
+      </form>
     </div>
 
     <!-- navbar -->
@@ -170,9 +238,16 @@
     </nav>
 
     <div class="main-content container text-white">
-      <h1>Dejame tu comentario</h1>
+      <h1>Déjame tu comentario</h1>
 
-      <form id="formContacto" method="post" action="successful.html">
+      <form
+        id="formContacto"
+        method="post"
+        action="successful.html"
+        name="formContacto"
+        class="needs-validation"
+        novalidate
+      >
         <div class="form-row">
           <div class="form-group col-sm-6">
             <label for="nombre">Nombre</label>
@@ -182,7 +257,8 @@
               placeholder="Ingresa tu nombre"
               class="form-control is-invalid"
               required
-              pattern="^[a-zA-ZÀ-ÿ\s]+{2,20}$"
+              pattern="^[a-zA-ZÀ-ÿ\s]{2,20}$"
+              autofocus
             />
             <div class="invalid-feedback">Este campo no puede estar vacío.</div>
             <div class="invalid-feedback">
@@ -200,7 +276,7 @@
               placeholder="Ingresa tu apellido"
               class="form-control is-invalid"
               required
-              pattern="^[a-zA-ZÀ-ÿ\s]+{2,20}$"
+              pattern="^[a-zA-ZÀ-ÿ\s]{2,20}$"
             />
             <div class="invalid-feedback">Este campo no puede estar vacío.</div>
             <div class="invalid-feedback">
@@ -274,12 +350,14 @@
           <textarea
             id="comentario"
             rows="10"
-            class="form-control"
+            class="form-control is-invalid"
             required
+            minlength="140"
             maxlength="1500"
             ></textarea>
+            <div class="invalid-feedback">Este campo no puede estar vacío.</div>
             <div class="invalid-feedback">
-              La longitud del comentario no puede exceder de 1500 caracteres.
+              La longitud del comentario no puede exceder de 1500 ni ser menor a 140 caracteres.
             </div>
         </div>
 

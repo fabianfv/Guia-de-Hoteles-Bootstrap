@@ -13,7 +13,6 @@ $(function () {
 
 $(function () {
   $(".modal").on("shown.bs.modal", function () {
-    $(":input:text").first().focus();
     $("input").addClass("is-invalid");
     $("input").removeClass("is-valid");
     $("input[type='checkbox']").prop("checked", false);
@@ -24,7 +23,6 @@ $(function () {
   });
 
   $("#comentario").each(function () {
-    console.log(this);
     this.value = "";
   });
 
@@ -32,7 +30,9 @@ $(function () {
   $("form").on("submit", validate);
 
   $("input").on("keyup", validate);
-  $("input").on("focusout", validate);
+  $("input, #comentario").on("focusout", validate);
+  $("#comentario").on("keyup", validate);
+  $("#comentario").on("focusout", validate);
 
   function validate(e) {
     const input = e.target;
@@ -45,6 +45,7 @@ $(function () {
       input.classList.remove("is-invalid");
       input.classList.add("is-valid");
     }
+
     input.classList.add("was-validated");
   }
 });
