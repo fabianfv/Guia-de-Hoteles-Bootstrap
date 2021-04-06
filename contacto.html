@@ -18,7 +18,7 @@
     <!--
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
     -->
-    <link rel="stylesheet" href="node_modules/@fortawesome/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="node_modules/@fortawesome/fontawesome-free/css/all.min.css" />
 
     <link rel="stylesheet" href="css/styles.css" />
 
@@ -43,7 +43,7 @@
             </button>
           </div>
           <div class="modal-body mr-3 ml-3">
-            <form>
+            <form id="signIn" action="" method="post" class="needs-validation" novalidate>
               <div class="form-group">
                 <label for="nombre-usuario">Nombre de Usuario</label>
                 <input
@@ -85,7 +85,7 @@
             </button>
           </div>
           <div class="modal-body mr-3 ml-3">
-            <form>
+            <form id="signUp" action="" method="post" class="needs-validation" novalidate>
               <div class="form-group">
                 <label for="nombre-usuario">Nombre de Usuario</label>
                 <input
@@ -172,31 +172,91 @@
     <div class="main-content container text-white">
       <h1>Dejame tu comentario</h1>
 
-      <form>
+      <form id="formContacto" method="post" action="successful.html">
         <div class="form-row">
           <div class="form-group col-sm-6">
             <label for="nombre">Nombre</label>
-            <input type="text" id="nombre" placeholder="Ingresa tu nombre" class="form-control" />
+            <input
+              type="text"
+              id="nombre"
+              placeholder="Ingresa tu nombre"
+              class="form-control is-invalid"
+              required
+              pattern="^[a-zA-ZÀ-ÿ\s]+{2,20}$"
+            />
+            <div class="invalid-feedback">Este campo no puede estar vacío.</div>
+            <div class="invalid-feedback">
+              Solo son válidas las letras de la A a la Z (mayúsculas y minúsculas), letras con tilde y espacios.
+            </div>
+            <div class="invalid-feedback">
+              El campo nombre debe tener una longitud mínima de 2 caracteres y máxima de 20.
+            </div>
           </div>
           <div class="form-group col-sm-6">
             <label for="apellido">Apellido</label>
-            <input type="text" id="apellido" placeholder="Ingresa tu apellido" class="form-control" />
+            <input
+              type="text"
+              id="apellido"
+              placeholder="Ingresa tu apellido"
+              class="form-control is-invalid"
+              required
+              pattern="^[a-zA-ZÀ-ÿ\s]+{2,20}$"
+            />
+            <div class="invalid-feedback">Este campo no puede estar vacío.</div>
+            <div class="invalid-feedback">
+              Solo son válidas las letras de la A a la Z (mayúsculas y minúsculas) y letras con tilde.
+            </div>
+            <div class="invalid-feedback">
+              El campo apellido debe tener una longitud mínima de 2 caracteres y máxima de 20.
+            </div>
           </div>
         </div>
 
         <div class="form-group">
           <label for="email">Email</label>
-          <input type="email" id="email" placeholder="Ingresa tu email" class="form-control" />
+          <input
+            type="email"
+            id="email"
+            placeholder="Ingresa tu email"
+            class="form-control is-invalid"
+            required
+            pattern="[\w.\-À-ÿ\.]+@[\w\-À-ÿ]+\.[a-zA-Z]{2,3}"
+          />
+          <div class="invalid-feedback">Este campo no puede estar vacío.</div>
+          <div class="invalid-feedback">El caracter @ debe estar presente.</div>
+          <div class="invalid-feedback">
+            Solo son válidas las letras, letras con tilde, números, puntos y guión medio.
+          </div>
+          <div class="invalid-feedback">
+            El email deber estar compuesto de un nombre de usuario y un dominio, por ejempo:
+            mi.nombre.de.usuario@mail.com
+          </div>
         </div>
 
         <div class="form-row">
           <div class="form-group col-sm-9">
             <label for="domicilio">Domicilio</label>
-            <input type="text" id="domicilio" placeholder="Ingresa tu domicilio" class="form-control" />
+            <input
+              type="text"
+              id="domicilio"
+              placeholder="Ingresa tu domicilio"
+              class="form-control is-invalid"
+              required
+              pattern="^[\w\d\sÀ-ÿ\.,]{10,100}$"
+            />
+            <div class="invalid-feedback">Este campo no puede estar vacío.</div>
+            <div class="invalid-feedback">
+              Solo son válidas las letras de la A a la Z (mayúsculas y minúsculas), letras con tilde, espacios,
+              números, coma y punto.
+            </div>
+            <div class="invalid-feedback">
+              El campo domicilio debe tener una longitud mínima de 10 caracteres y máxima de 100.
+            </div>
           </div>
+
           <div class="from-group col-sm-3">
             <label for="provincia">Provincia</label>
-            <select id="provincia" class="form-control">
+            <select id="provincia" class="form-control is-valid">
               <option selected>Chubut</option>
               <option>Río Negro</option>
               <option>Santa Cruz</option>
@@ -206,17 +266,31 @@
               <option>Formosa</option>
             </select>
           </div>
+
         </div>
 
         <div class="form-group">
           <label for="comentario">Comentario</label>
-          <textarea id="comentario" rows="10" class="form-control"></textarea>
+          <textarea
+            id="comentario"
+            rows="10"
+            class="form-control"
+            required
+            maxlength="1500"
+            ></textarea>
+            <div class="invalid-feedback">
+              La longitud del comentario no puede exceder de 1500 caracteres.
+            </div>
         </div>
 
         <div class="form-group">
           <div class="form-check">
-            <input type="checkbox" id="suscribete" class="form-check-input" />
-            <label for="suscribete">Quiero que me contacten</label>
+              <input
+                type="checkbox"
+                id="suscribete"
+                class="form-check-input"
+              />
+              <label class="form-check-label p-0 ml-2" for="suscribete">Quiero que me contacten </label>
           </div>
         </div>
         <input type="submit" value="Enviar" class="btn btn-primary" />
@@ -255,15 +329,9 @@
           <address class="data">
             <p>9 a 18 de Lunes a Viernes</p>
             <p>9 a 13 los Sábados</p>
-            <p>
-              Chiquito de la Calzada 18 Bajos
-            </p>
-            <p>
-              555-444-3333 / 777-888-9999
-            </p>
-            <p>
-              palma.giris@mail.com
-            </p>
+            <p>Chiquito de la Calzada 18 Bajos</p>
+            <p>555-444-3333 / 777-888-9999</p>
+            <p>palma.giris@mail.com</p>
           </address>
         </div>
 
@@ -291,13 +359,6 @@
     -->
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-      $(function () {
-        $('[data-toggle="tooltip"]').tooltip();
-      });
-      $(function () {
-        $('[data-toggle="popover"]').popover();
-      });
-    </script>
+    <script src="js/scripts.js"></script>
   </body>
 </html>

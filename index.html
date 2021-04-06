@@ -17,15 +17,15 @@
     <!--
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
     -->
-    <link rel="stylesheet" href="node_modules/@fortawesome/fontawesome-free/css/all.min.css">
-    
+    <link rel="stylesheet" href="node_modules/@fortawesome/fontawesome-free/css/all.min.css" />
+
     <link rel="stylesheet" href="css/styles.css" />
 
     <title>Guía de Hoteles</title>
   </head>
   <body class="body-bg-color">
-
     <!-- modal sign in -->
+
     <div
       class="modal fade"
       id="modalSignIn"
@@ -34,37 +34,69 @@
       aria-labelledby="modalSignInLabel"
       aria-hidden="true"
     >
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="modalSignInLabel">Inicio de Sesión</h5>
-            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body mr-3 ml-3">
-            <form>
-                <div class="form-group">
-                  <label for="nombre-usuario">Nombre de Usuario</label>
-                  <input
-                    type="text"
-                    id="nombre-usuario"
-                    placeholder="Ingresa tu nombre de Usuario"
-                    class="form-control"
-                  />
+      <form
+        id="formSignIn"
+        method="post"
+        action="successful.html"
+        name="formSignIn"
+        class="needs-validation"
+        novalidate
+      >
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="modalSignInLabel">Inicio de Sesión</h5>
+              <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+
+            <div class="modal-body mr-3 ml-3">
+              <div class="form-group">
+                <label for="signInNombreUsuario">Nombre de Usuario</label>
+                <input
+                  id="signInNombreUsuario"
+                  type="text"
+                  placeholder="Ingresa tu nombre de Usuario"
+                  class="form-control is-invalid"
+                  required
+                  pattern="^\w{2,20}$"
+                />
+                <div class="invalid-feedback">Este campo no puede estar vacío.</div>
+                <div class="invalid-feedback">
+                  Solo son válidas las letras de la A a la Z (mayúsculas y minúsculas) y el guión bajo.
                 </div>
-                <div class="form-group">
-                  <label for="contraseña">Contraseña</label>
-                  <input type="text" id="contraseña" placeholder="Ingresa tu contraseña" class="form-control" />
+                <div class="invalid-feedback">
+                  El nombre de usuario debe tener una longitud mínima de 2 caracteres y máxima de 20.
                 </div>
-            </form>
-          </div>
-          <div class="modal-footer">
-            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
-            <input type="submit" value="Aceptar" class="btn btn-success" />
+              </div>
+
+              <div class="form-group">
+                <label for="signInContrasenia">Contraseña</label>
+                <input
+                  id="signInContrasenia"
+                  type="password"
+                  placeholder="Ingresa tu contraseña"
+                  class="form-control is-invalid"
+                  pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[#$%/()=¿?*+-])(?=(?:([\w\d])\1?(?!\1\1))).{8,16}$"
+                  required
+                />
+                <div class="invalid-feedback">Este campo no puede estar vacío.</div>
+                <div class="invalid-feedback">
+                  La contraseña debe tener una longitud mínima de 8 caracteres y máxima de 16.
+                </div>
+                <div class="invalid-feedback">
+                  La constraseña debe contener minúsculas, mayúsculas, números y símbolos.
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
+              <input type="submit" value="Aceptar" class="btn btn-success" />
+            </div>
           </div>
         </div>
-      </div>
+      </form>
     </div>
 
     <!-- modal sign up -->
@@ -76,46 +108,81 @@
       aria-labelledby="modalSignUpLabel"
       aria-hidden="true"
     >
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="modalSignUpLabel">Nueva cuenta de usuario</h5>
-            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body mr-3 ml-3">
-            <form>
-                <div class="form-group">
-                  <label for="nombre-usuario">Nombre de Usuario</label>
-                  <input
-                    type="text"
-                    id="nombre-usuario"
-                    placeholder="Ingresa tu nombre de Usuario"
-                    class="form-control"
-                  />
+      <form id="formSignUp" method="post" action="successful.html" class="needs-validation" novalidate>
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="modalSignUpLabel">Nueva cuenta de usuario</h5>
+              <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body mr-3 ml-3">
+              <div class="form-group">
+                <label for="signUpNombreUsuario">Nombre de Usuario</label>
+                <input
+                  type="text"
+                  id="signUpNombreUsuario"
+                  placeholder="Ingresa tu nombre de Usuario"
+                  class="form-control is-invalid"
+                  required
+                  pattern="^\w{2,20}$"
+                />
+                <div class="invalid-feedback">Este campo no puede estar vacío.</div>
+                <div class="invalid-feedback">
+                  Solo son válidas las letras de la A a la Z (mayúsculas y minúsculas) y el guión bajo.
                 </div>
-                <div class="form-group">
-                  <label for="email">Dirección de correo electrónico</label>
-                  <input
-                    type="text"
-                    id="email"
-                    placeholder="Ingresa tu dirección de correo electrónico"
-                    class="form-control"
-                  />
+                <div class="invalid-feedback">
+                  El nombre de usuario debe tener una longitud mínima de 2 caracteres y máxima de 20.
                 </div>
-                <div class="form-group">
-                  <label for="contraseña">Contraseña</label>
-                  <input type="text" id="contraseña" placeholder="Ingresa tu contraseña" class="form-control" />
+              </div>
+              <div class="form-group">
+                <label for="email">Dirección de correo electrónico</label>
+                <input
+                  type="email"
+                  id="signUpEmail"
+                  placeholder="Ingresa tu dirección de correo electrónico"
+                  class="inputEmail form-control is-invalid"
+                  required
+                  pattern="[\w.\-\.À-ÿ]+@[\w\-À-ÿ]+\.[a-zA-Z]{2,3}"
+                />
+                <div class="invalid-feedback">Este campo no puede estar vacío.</div>
+                <div class="invalid-feedback">El caracter @ debe estar presente.</div>
+                <div class="invalid-feedback">
+                  Solo son válidas las letras, letras con tilde, números, puntos y guión medio.
                 </div>
-            </form>
-          </div>
-          <div class="modal-footer">
-            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
-            <input type="submit" value="Aceptar" class="btn btn-success" />
+                <div class="invalid-feedback">
+                  El email deber estar compuesto de un nombre de usuario y un dominio, por ejempo:
+                  mi.nombre.de.usuario@mail.com
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="signUpContrasenia">Contraseña</label>
+                <input
+                  type="password"
+                  id="signUpContrasenia"
+                  placeholder="Ingresa tu contraseña"
+                  class="form-control is-invalid"
+                  required
+                  pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[#$%\/\(\)=¿?*+-])(?=(?:([\w\d])\1?(?!\1\1))).{8,16}$"
+                />
+                <div class="invalid-feedback">Este campo no puede estar vacío.</div>
+                <div class="invalid-feedback">
+                  La contraseña debe tener una longitud mínima de 8 caracteres y máxima de 16.
+                </div>
+                <div class="invalid-feedback">
+                  La constraseña debe contener minúsculas, mayúsculas, números y símbolos (#$%/()=¿?*+-).
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
+              <input id="formSignInSubmit" type="submit" value="Aceptar" class="btn btn-success" />
+            </div>
           </div>
         </div>
-      </div>
+      </form>
     </div>
 
     <!-- navbar -->
@@ -149,7 +216,7 @@
       <div class="row">
         <!-- Sign in / Sign up -->
         <button
-          id="signIn"
+          id="btnSignIn"
           class="button-sign btn btn-primary btn-sm text-nowrap shadow-none mr-2"
           type="button"
           data-toggle="modal"
@@ -158,7 +225,7 @@
           Ingresar
         </button>
         <button
-          id="signUp"
+          id="btnSignUp"
           class="button-sign btn btn-primary btn-sm text-nowrap shadow-none mr-3"
           type="button"
           data-toggle="modal"
@@ -330,7 +397,7 @@
               </figure>
 
               <button
-                id="vacaciones-familiares"
+                id="vacacionesFamiliares"
                 class="btn btn-success btn-reserva"
                 type="button"
                 data-toggle="modal"
@@ -359,7 +426,7 @@
               </figure>
 
               <button
-                id="escapada-fin-de-semana"
+                id="escapadaFinDeSemana"
                 class="btn btn-success btn-reserva"
                 type="button"
                 data-toggle="modal"
@@ -420,7 +487,7 @@
               </figure>
 
               <button
-                id="todo-incluido"
+                id="todoIncluido"
                 class="btn btn-success btn-reserva"
                 type="button"
                 data-toggle="modal"
@@ -452,33 +519,92 @@
             </button>
           </div>
           <div class="modal-body mr-3 ml-3">
-            <form>
+            <form id="formReservation" method="post" action="successful.html" class="needs-validation" novalidate>
               <div class="form-row">
                 <div class="form-group col">
-                  <label for="nombre">Nombre</label>
-                  <input type="text" id="nombre" placeholder="Ingresa tu nombre" class="form-control" />
+                  <label for="reservaNombre">Nombre</label>
+                  <input
+                    type="text"
+                    id="reservaNombre"
+                    placeholder="Ingresa tu nombre"
+                    class="form-control "
+                    required
+                    pattern="^[a-zA-ZÀ-ÿ\s]+{2,20}$"
+                  />
+                  <div class="invalid-feedback">Este campo no puede estar vacío.</div>
+                  <div class="invalid-feedback">
+                    Solo son válidas las letras de la A a la Z (mayúsculas y minúsculas), letras con tilde y espacios.
+                  </div>
+                  <div class="invalid-feedback">
+                    El campo nombre debe tener una longitud mínima de 2 caracteres y máxima de 20.
+                  </div>
                 </div>
                 <div class="form-group col">
-                  <label for="apellido">Apellido</label>
-                  <input type="text" id="apellido" placeholder="Ingresa tu apellido" class="form-control" />
+                  <label for="reservaApellido">Apellido</label>
+                  <input
+                    type="text"
+                    id="reservaApellido"
+                    placeholder="Ingresa tu apellido"
+                    class="form-control "
+                    required
+                    pattern="^[a-zA-ZÀ-ÿ]+{2,20}$"
+                  />
+                  <div class="invalid-feedback">Este campo no puede estar vacío.</div>
+                  <div class="invalid-feedback">
+                    Solo son válidas las letras de la A a la Z (mayúsculas y minúsculas) y letras con tilde.
+                  </div>
+                  <div class="invalid-feedback">
+                    El campo apellido debe tener una longitud mínima de 2 caracteres y máxima de 20.
+                  </div>
                 </div>
               </div>
               <div class="form-row">
                 <div class="form-group col">
                   <label for="email">Email</label>
-                  <input type="email" id="email" placeholder="Ingresa tu email" class="form-control" />
+                  <input
+                    type="email"
+                    id="email"
+                    placeholder="Ingresa tu email"
+                    class="inputEmail form-control "
+                    required
+                    pattern="[\w.\-À-ÿ\.]+@[\w\-À-ÿ]+\.[a-zA-Z]{2,3}"
+                  />
+                  <div class="invalid-feedback">Este campo no puede estar vacío.</div>
+                  <div class="invalid-feedback">El caracter @ debe estar presente.</div>
+                  <div class="invalid-feedback">
+                    Solo son válidas las letras, letras con tilde, números, puntos y guión medio.
+                  </div>
+                  <div class="invalid-feedback">
+                    El email deber estar compuesto de un nombre de usuario y un dominio, por ejempo:
+                    mi.nombre.de.usuario@mail.com
+                  </div>
                 </div>
               </div>
               <div class="form-row">
                 <div class="form-group col">
-                  <label for="domicilio">Domicilio</label>
-                  <input type="text" id="domicilio" placeholder="Ingresa tu domicilio" class="form-control" />
+                  <label for="reservaDomicilio">Domicilio</label>
+                  <input
+                    type="text"
+                    id="reservaDomicilio"
+                    placeholder="Ingresa tu domicilio"
+                    class="form-control "
+                    required
+                    pattern="^[\w\d\sÀ-ÿ\.,]{10,100}$"
+                  />
+                  <div class="invalid-feedback">Este campo no puede estar vacío.</div>
+                  <div class="invalid-feedback">
+                    Solo son válidas las letras de la A a la Z (mayúsculas y minúsculas), letras con tilde, espacios,
+                    números, coma y punto.
+                  </div>
+                  <div class="invalid-feedback">
+                    El campo domicilio debe tener una longitud mínima de 10 caracteres y máxima de 100.
+                  </div>
                 </div>
               </div>
               <div class="form-row">
                 <div class="from-group col">
-                  <label for="tipo-habitacion">Tipo de habitación</label>
-                  <select id="tipo-habitacion" class="form-control">
+                  <label for="tipoHabitacion">Tipo de habitación</label>
+                  <select id="tipoHabitacion" class="form-control is-valid">
                     <option selected>Simple</option>
                     <option>Doble</option>
                     <option>Suite</option>
@@ -492,12 +618,12 @@
                 <div class="form-group col">
                   <label>Opciones</label>
                   <div class="form-check ml-1">
-                    <input type="checkbox" id="servicio-habitacion" class="form-check-input" />
-                    <label for="servicio-habitacion" class="ml-1">Con servicio en habitación</label>
+                    <input type="checkbox" id="servicioHabitacion" class="form-check-input " />
+                    <label for="servicioHabitacion" class="ml-1">Con servicio en habitación</label>
                   </div>
                   <div class="form-check ml-1">
-                    <input type="checkbox" id="mini-bar" class="form-check-input" />
-                    <label for="mini-bar" class="ml-1">Con mini bar</label>
+                    <input type="checkbox" id="miniBar" class="form-check-input " />
+                    <label for="miniBar" class="ml-1">Con mini bar</label>
                   </div>
                 </div>
               </div>
@@ -966,15 +1092,9 @@
           <address class="data">
             <p>9 a 18 de Lunes a Viernes</p>
             <p>9 a 13 los Sábados</p>
-            <p>
-              Chiquito de la Calzada 18 Bajos
-            </p>
-            <p>
-              555-444-3333 / 777-888-9999
-            </p>
-            <p>
-              palma.giris@mail.com
-            </p>
+            <p>Chiquito de la Calzada 18 Bajos</p>
+            <p>555-444-3333 / 777-888-9999</p>
+            <p>palma.giris@mail.com</p>
           </address>
         </div>
 
@@ -1001,13 +1121,6 @@
     -->
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-      $(function () {
-        $('[data-toggle="tooltip"]').tooltip();
-      });
-      $(function () {
-        $('[data-toggle="popover"]').popover();
-      });
-    </script>
+    <script src="js/scripts.js"></script>
   </body>
 </html>
