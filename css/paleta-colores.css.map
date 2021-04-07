@@ -1,9 +1,0 @@
-{
-    "version": 3,
-    "mappings": "AAAA;;;;;EAKE;AAcF,AAAA,aAAa,CAAC;EACZ,KAAK,EAAE,OAAmB;CAC3B",
-    "sources": [
-        "../paleta-colores.scss"
-    ],
-    "names": [],
-    "file": "paleta-colores.css"
-}
